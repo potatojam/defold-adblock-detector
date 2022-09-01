@@ -1,0 +1,19 @@
+local RED_COLOR = vmath.vector4(1, 0, 0, 1)
+local GREEN_COLOR = vmath.vector4(0, 1, 0, 1)
+
+local function on_complete(self, result)
+    if result then
+        gui.set_text(self.text_node, "detection -> true")
+        gui.set_color(self.text_node, RED_COLOR)
+    else
+        gui.set_text(self.text_node, "detection -> false")
+        gui.set_color(self.text_node, GREEN_COLOR)
+    end
+end
+
+function init(self)
+    self.text_node = gui.get_node("text")
+    if adblockdetector then
+        adblockdetector.detect(on_complete)
+    end
+end
