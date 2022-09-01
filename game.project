@@ -10,6 +10,8 @@ height = 640
 
 [project]
 title = AdblockDetector
+version = 1.0.1
 
 [library]
 include_dirs = adblockdetector
+
