@@ -43,6 +43,7 @@ end
 Made by [PotatoJam](https://github.com/potatojam).
 
 Based on [just-detect-adblock](https://github.com/wmcmurray/just-detect-adblock)
+
 And on [Detecting uBlock Origin and Adblock Plus with JavaScript only](https://incolumitas.com/2020/12/27/detecting-uBlock-Origin-and-Adblock-Plus-with-JavaScript-only/)
 
 ### License
