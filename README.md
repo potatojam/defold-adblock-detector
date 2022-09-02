@@ -1,8 +1,9 @@
 # Adblock Detector for Defold
 
-Finds adblock using [this](https://github.com/wmcmurray/just-detect-adblock) package.
+Finds adblock using [this](https://github.com/wmcmurray/just-detect-adblock) package and [this](https://incolumitas.com/2020/12/27/detecting-uBlock-Origin-and-Adblock-Plus-with-JavaScript-only/)
 
-> &#x26a0;&#xfe0f; Doesn't work for AdGuard and uBlock Origin
+> &#x26a0;&#xfe0f; neutral.js and pp34.js files are added to the project to define AdGuard, uBlock Origin, Adblock Plus
+> Adblock blocks requests when it is enabled in the browser and errors may occur in the console.
 
 ## Installation
 
@@ -41,6 +42,7 @@ end
 Made by [PotatoJam](https://github.com/potatojam).
 
 Based on [just-detect-adblock](https://github.com/wmcmurray/just-detect-adblock)
+And on [Detecting uBlock Origin and Adblock Plus with JavaScript only](https://incolumitas.com/2020/12/27/detecting-uBlock-Origin-and-Adblock-Plus-with-JavaScript-only/)
 
 ### License
 

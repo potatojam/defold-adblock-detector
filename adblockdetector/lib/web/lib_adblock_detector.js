@@ -13,7 +13,13 @@ var LibAdsDetector = {
     AdsDetector_Detect: function (callback) {
         AdblockDetector._callback = callback;
         justDetectAdblock.detectAnyAdblocker().then(function (detected) {
-            AdblockDetector._detectCallback(detected);
+            if (detected) {
+                AdblockDetector._detectCallback(detected);
+            } else {
+                detectAdblockPlus().then((res) => {
+                    AdblockDetector._detectCallback(res.adblockPlus || res.uBlockOrigin);
+                });
+            }
         });
     },
 }
