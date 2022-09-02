@@ -2,8 +2,9 @@
 
 Finds adblock using [this](https://github.com/wmcmurray/just-detect-adblock) package and [this](https://incolumitas.com/2020/12/27/detecting-uBlock-Origin-and-Adblock-Plus-with-JavaScript-only/)
 
-> &#x26a0;&#xfe0f; neutral.js and pp34.js files are added to the project to define AdGuard, uBlock Origin, Adblock Plus
-> Adblock blocks requests when it is enabled in the browser and errors may occur in the console.
+> &#x26a0;&#xfe0f; **neutral.js** and **pp34.js** files are added to the project to define **AdGuard**, **uBlock Origin**, **Adblock Plus**.
+
+> &#x26a0;&#xfe0f; Adblock blocks requests when it is enabled in the browser and **errors** may occur in the console.
 
 ## Installation
 
