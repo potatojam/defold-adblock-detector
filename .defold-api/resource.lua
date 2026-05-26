@@ -18,14 +18,6 @@ resource.LIVEUPDATE_SCHEME_MISMATCH = nil
 resource.LIVEUPDATE_SIGNATURE_MISMATCH = nil
 ---LIVEUPDATE_VERSION_MISMATCH
 resource.LIVEUPDATE_VERSION_MISMATCH = nil
----luminance type texture format
-resource.TEXTURE_FORMAT_LUMINANCE = nil
----RGB type texture format
-resource.TEXTURE_FORMAT_RGB = nil
----RGBA type texture format
-resource.TEXTURE_FORMAT_RGBA = nil
----2D texture type
-resource.TEXTURE_TYPE_2D = nil
 ---Constructor-like function with two purposes:
 ---
 ---
@@ -66,6 +58,13 @@ function resource.font(path) end
 ---@param path hash|string The path to the resource
 ---@return buffer The resource buffer
 function resource.get_buffer(path) end
+
+---Gets the text metrics from a font.
+---@param url hash the font to get the unscaled metrics from
+---@param text string text to measure
+---@param options table optional table with width, line_break, leading, and tracking
+---@return table a table with width, height, max_ascent, and max_descent
+function resource.get_text_metrics(url, text, options) end
 
 ---Return a reference to the Manifest that is currently loaded.
 ---@return number reference to the Manifest that is currently loaded

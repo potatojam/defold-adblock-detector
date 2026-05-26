@@ -26,18 +26,23 @@ function sys.get_application_info(app_string) end
 ---@return string path to application executable
 function sys.get_application_path() end
 
----Get config value from the game.project configuration file.
----In addition to the project file, configuration values can also be passed
----to the runtime as command line arguments with the --config argument.
+---Get string config value from the game.project configuration file with optional default value.
 ---@param key string key to get value for. The syntax is SECTION.KEY
----@return string config value as a string. nil if the config key doesn't exists
-function sys.get_config(key) end
+---@param default_value string optional default value to return if the value does not exist
+---@return string config value as a string
+function sys.get_config_string(key, default_value) end
 
----Get config value from the game.project configuration file with default value
+---Get integer config value from the game.project configuration file with optional default value.
 ---@param key string key to get value for. The syntax is SECTION.KEY
----@param default_value string default value to return if the value does not exist
----@return string config value as a string. default_value if the config key does not exist
-function sys.get_config(key, default_value) end
+---@param default_value number optional default value to return if the value does not exist
+---@return number config value as an integer
+function sys.get_config_int(key, default_value) end
+
+---Get number config value from the game.project configuration file with optional default value.
+---@param key string key to get value for. The syntax is SECTION.KEY
+---@param default_value number optional default value to return if the value does not exist
+---@return number config value as a number
+function sys.get_config_number(key, default_value) end
 
 --- Returns the current network connectivity status
 ---on mobile platforms.

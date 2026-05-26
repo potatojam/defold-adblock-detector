@@ -137,7 +137,7 @@ function vmath.matrix4_axis_angle(v, angle) end
 ---The resulting matrix describes the same rotation as the quaternion, but does not have any translation (also like the quaternion).
 ---@param q quaternion quaternion to create matrix from
 ---@return matrix4 matrix represented by quaternion
-function vmath.matrix4_from_quat(q) end
+function vmath.matrix4_quat(q) end
 
 ---Constructs a frustum matrix from the given values. The left, right,
 ---top and bottom coordinates of the view cone are expressed as distances

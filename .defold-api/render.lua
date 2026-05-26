@@ -8,64 +8,11 @@
 ---require features not in OpenGL ES 2.0, but those will not work cross platform.
 ---@class render
 render = {}
-render.BLEND_CONSTANT_ALPHA = nil
-render.BLEND_CONSTANT_COLOR = nil
-render.BLEND_DST_ALPHA = nil
-render.BLEND_DST_COLOR = nil
-render.BLEND_ONE = nil
-render.BLEND_ONE_MINUS_CONSTANT_ALPHA = nil
-render.BLEND_ONE_MINUS_CONSTANT_COLOR = nil
-render.BLEND_ONE_MINUS_DST_ALPHA = nil
-render.BLEND_ONE_MINUS_DST_COLOR = nil
-render.BLEND_ONE_MINUS_SRC_ALPHA = nil
-render.BLEND_ONE_MINUS_SRC_COLOR = nil
-render.BLEND_SRC_ALPHA = nil
-render.BLEND_SRC_ALPHA_SATURATE = nil
-render.BLEND_SRC_COLOR = nil
-render.BLEND_ZERO = nil
-render.BUFFER_COLOR_BIT = nil
-render.BUFFER_DEPTH_BIT = nil
-render.BUFFER_STENCIL_BIT = nil
-render.COMPARE_FUNC_ALWAYS = nil
-render.COMPARE_FUNC_EQUAL = nil
-render.COMPARE_FUNC_GEQUAL = nil
-render.COMPARE_FUNC_GREATER = nil
-render.COMPARE_FUNC_LEQUAL = nil
-render.COMPARE_FUNC_LESS = nil
-render.COMPARE_FUNC_NEVER = nil
-render.COMPARE_FUNC_NOTEQUAL = nil
-render.FACE_BACK = nil
-render.FACE_FRONT = nil
-render.FACE_FRONT_AND_BACK = nil
-render.FILTER_LINEAR = nil
-render.FILTER_NEAREST = nil
-render.FORMAT_DEPTH = nil
-render.FORMAT_LUMINANCE = nil
-render.FORMAT_RGB = nil
-render.FORMAT_RGBA = nil
 render.FORMAT_RGBA_DXT1 = nil
 render.FORMAT_RGBA_DXT3 = nil
 render.FORMAT_RGBA_DXT5 = nil
 render.FORMAT_RGB_DXT1 = nil
-render.FORMAT_STENCIL = nil
 render.RENDER_TARGET_DEFAULT = nil
-render.STATE_BLEND = nil
-render.STATE_CULL_FACE = nil
-render.STATE_DEPTH_TEST = nil
-render.STATE_POLYGON_OFFSET_FILL = nil
-render.STATE_STENCIL_TEST = nil
-render.STENCIL_OP_DECR = nil
-render.STENCIL_OP_DECR_WRAP = nil
-render.STENCIL_OP_INCR = nil
-render.STENCIL_OP_INCR_WRAP = nil
-render.STENCIL_OP_INVERT = nil
-render.STENCIL_OP_KEEP = nil
-render.STENCIL_OP_REPLACE = nil
-render.STENCIL_OP_ZERO = nil
-render.WRAP_CLAMP_TO_BORDER = nil
-render.WRAP_CLAMP_TO_EDGE = nil
-render.WRAP_MIRRORED_REPEAT = nil
-render.WRAP_REPEAT = nil
 ---Clear buffers in the currently enabled render target with specified value.
 ---@param buffers table table with keys specifying which buffers to clear and values set to clear values. Available keys are:
 function render.clear(buffers) end
@@ -201,21 +148,21 @@ function render.render_target(name, parameters) end
 ---Available factor constants and corresponding scale factors:
 ---
 ---Factor constant               Scale factor (fR,fG,fB,fA)
----render.BLEND_ZERO             (0,0,0,0)
----render.BLEND_ONE              (1,1,1,1)
----render.BLEND_SRC_COLOR        (Rs/kR,Gs/kG,Bs/kB,As/kA)
----render.BLEND_ONE_MINUS_SRC_COLOR(1,1,1,1) - (Rs/kR,Gs/kG,Bs/kB,As/kA)
----render.BLEND_DST_COLOR        (Rd/kR,Gd/kG,Bd/kB,Ad/kA)
----render.BLEND_ONE_MINUS_DST_COLOR(1,1,1,1) - (Rd/kR,Gd/kG,Bd/kB,Ad/kA)
----render.BLEND_SRC_ALPHA        (As/kA,As/kA,As/kA,As/kA)
----render.BLEND_ONE_MINUS_SRC_ALPHA(1,1,1,1) - (As/kA,As/kA,As/kA,As/kA)
----render.BLEND_DST_ALPHA        (Ad/kA,Ad/kA,Ad/kA,Ad/kA)
----render.BLEND_ONE_MINUS_DST_ALPHA(1,1,1,1) - (Ad/kA,Ad/kA,Ad/kA,Ad/kA)
----render.BLEND_CONSTANT_COLOR   (Rc,Gc,Bc,Ac)
----render.BLEND_ONE_MINUS_CONSTANT_COLOR(1,1,1,1) - (Rc,Gc,Bc,Ac)
----render.BLEND_CONSTANT_ALPHA   (Ac,Ac,Ac,Ac)
----render.BLEND_ONE_MINUS_CONSTANT_ALPHA(1,1,1,1) - (Ac,Ac,Ac,Ac)
----render.BLEND_SRC_ALPHA_SATURATE(i,i,i,1) where i = min(As, kA - Ad) /kA
+---graphics.BLEND_FACTOR_ZERO             (0,0,0,0)
+---graphics.BLEND_FACTOR_ONE              (1,1,1,1)
+---graphics.BLEND_FACTOR_SRC_COLOR        (Rs/kR,Gs/kG,Bs/kB,As/kA)
+---graphics.BLEND_FACTOR_ONE_MINUS_SRC_COLOR(1,1,1,1) - (Rs/kR,Gs/kG,Bs/kB,As/kA)
+---graphics.BLEND_FACTOR_DST_COLOR        (Rd/kR,Gd/kG,Bd/kB,Ad/kA)
+---graphics.BLEND_FACTOR_ONE_MINUS_DST_COLOR(1,1,1,1) - (Rd/kR,Gd/kG,Bd/kB,Ad/kA)
+---graphics.BLEND_FACTOR_SRC_ALPHA        (As/kA,As/kA,As/kA,As/kA)
+---graphics.BLEND_FACTOR_ONE_MINUS_SRC_ALPHA(1,1,1,1) - (As/kA,As/kA,As/kA,As/kA)
+---graphics.BLEND_FACTOR_DST_ALPHA        (Ad/kA,Ad/kA,Ad/kA,Ad/kA)
+---graphics.BLEND_FACTOR_ONE_MINUS_DST_ALPHA(1,1,1,1) - (Ad/kA,Ad/kA,Ad/kA,Ad/kA)
+---graphics.BLEND_FACTOR_CONSTANT_COLOR   (Rc,Gc,Bc,Ac)
+---graphics.BLEND_FACTOR_ONE_MINUS_CONSTANT_COLOR(1,1,1,1) - (Rc,Gc,Bc,Ac)
+---graphics.BLEND_FACTOR_CONSTANT_ALPHA   (Ac,Ac,Ac,Ac)
+---graphics.BLEND_FACTOR_ONE_MINUS_CONSTANT_ALPHA(1,1,1,1) - (Ac,Ac,Ac,Ac)
+---graphics.BLEND_FACTOR_SRC_ALPHA_SATURATE(i,i,i,1) where i = min(As, kA - Ad) /kA
 ---The blended RGBA values of a pixel comes from the following equations:
 ---
 ---
@@ -227,7 +174,7 @@ function render.render_target(name, parameters) end
 ---
 --- * Ad = min(kA, As * sA + Ad * dA)
 ---
----Blend function (render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA) is useful for
+---Blend function (graphics.BLEND_FACTOR_SRC_ALPHA, graphics.BLEND_FACTOR_ONE_MINUS_SRC_ALPHA) is useful for
 ---drawing with transparency when the drawn objects are sorted from farthest to nearest.
 ---It is also useful for drawing antialiased points and lines in arbitrary order.
 ---@param source_factor constant source factor
@@ -244,9 +191,9 @@ function render.set_color_mask(red, green, blue, alpha) end
 
 ---Specifies whether front- or back-facing polygons can be culled
 ---when polygon culling is enabled. Polygon culling is initially disabled.
----If mode is render.FACE_FRONT_AND_BACK, no polygons are drawn, but other
+---If mode is graphics.FACE_TYPE_FRONT_AND_BACK, no polygons are drawn, but other
 ---primitives such as points and lines are drawn. The initial value for
----face_type is render.FACE_BACK.
+---face_type is graphics.FACE_TYPE_BACK.
 ---@param face_type constant face type
 function render.set_cull_face(face_type) end
 
@@ -257,23 +204,23 @@ function render.set_cull_face(face_type) end
 ---Function constants:
 ---
 ---
---- * render.COMPARE_FUNC_NEVER (never passes)
+--- * graphics.COMPARE_FUNC_NEVER (never passes)
 ---
---- * render.COMPARE_FUNC_LESS (passes if the incoming depth value is less than the stored value)
+--- * graphics.COMPARE_FUNC_LESS (passes if the incoming depth value is less than the stored value)
 ---
---- * render.COMPARE_FUNC_LEQUAL (passes if the incoming depth value is less than or equal to the stored value)
+--- * graphics.COMPARE_FUNC_LEQUAL (passes if the incoming depth value is less than or equal to the stored value)
 ---
---- * render.COMPARE_FUNC_GREATER (passes if the incoming depth value is greater than the stored value)
+--- * graphics.COMPARE_FUNC_GREATER (passes if the incoming depth value is greater than the stored value)
 ---
---- * render.COMPARE_FUNC_GEQUAL (passes if the incoming depth value is greater than or equal to the stored value)
+--- * graphics.COMPARE_FUNC_GEQUAL (passes if the incoming depth value is greater than or equal to the stored value)
 ---
---- * render.COMPARE_FUNC_EQUAL (passes if the incoming depth value is equal to the stored value)
+--- * graphics.COMPARE_FUNC_EQUAL (passes if the incoming depth value is equal to the stored value)
 ---
---- * render.COMPARE_FUNC_NOTEQUAL (passes if the incoming depth value is not equal to the stored value)
+--- * graphics.COMPARE_FUNC_NOTEQUAL (passes if the incoming depth value is not equal to the stored value)
 ---
---- * render.COMPARE_FUNC_ALWAYS (always passes)
+--- * graphics.COMPARE_FUNC_ALWAYS (always passes)
 ---
----The depth function is initially set to render.COMPARE_FUNC_LESS.
+---The depth function is initially set to graphics.COMPARE_FUNC_LESS.
 ---@param func constant depth test function, see the description for available values
 function render.set_depth_func(func) end
 
@@ -284,7 +231,7 @@ function render.set_depth_func(func) end
 function render.set_depth_mask(depth) end
 
 ---Sets the scale and units used to calculate depth values.
----If render.STATE_POLYGON_OFFSET_FILL is enabled, each fragment's depth value
+---If graphics.STATE_POLYGON_OFFSET_FILL is enabled, each fragment's depth value
 ---is offset from its interpolated value (depending on the depth value of the
 ---appropriate vertices). Polygon offset can be used when drawing decals, rendering
 ---hidden-line images etc.
@@ -327,7 +274,7 @@ function render.set_render_target_size(render_target, width, height) end
 ---The stencil test discards a pixel based on the outcome of a comparison between the
 ---reference value ref and the corresponding value in the stencil buffer.
 ---func specifies the comparison function. See the table below for values.
----The initial value is render.COMPARE_FUNC_ALWAYS.
+---The initial value is graphics.COMPARE_FUNC_ALWAYS.
 ---ref specifies the reference value for the stencil test. The value is clamped to
 ---the range [0, 2n-1], where n is the number of bitplanes in the stencil buffer.
 ---The initial value is 0.
@@ -336,21 +283,21 @@ function render.set_render_target_size(render_target, width, height) end
 ---Function constant:
 ---
 ---
---- * render.COMPARE_FUNC_NEVER (never passes)
+--- * graphics.COMPARE_FUNC_NEVER (never passes)
 ---
---- * render.COMPARE_FUNC_LESS (passes if (ref & mask) < (stencil & mask))
+--- * graphics.COMPARE_FUNC_LESS (passes if (ref & mask) < (stencil & mask))
 ---
---- * render.COMPARE_FUNC_LEQUAL (passes if (ref & mask) <= (stencil & mask))
+--- * graphics.COMPARE_FUNC_LEQUAL (passes if (ref & mask) <= (stencil & mask))
 ---
---- * render.COMPARE_FUNC_GREATER (passes if (ref & mask) > (stencil & mask))
+--- * graphics.COMPARE_FUNC_GREATER (passes if (ref & mask) > (stencil & mask))
 ---
---- * render.COMPARE_FUNC_GEQUAL (passes if (ref & mask) >= (stencil & mask))
+--- * graphics.COMPARE_FUNC_GEQUAL (passes if (ref & mask) >= (stencil & mask))
 ---
---- * render.COMPARE_FUNC_EQUAL (passes if (ref & mask) = (stencil & mask))
+--- * graphics.COMPARE_FUNC_EQUAL (passes if (ref & mask) = (stencil & mask))
 ---
---- * render.COMPARE_FUNC_NOTEQUAL (passes if (ref & mask) != (stencil & mask))
+--- * graphics.COMPARE_FUNC_NOTEQUAL (passes if (ref & mask) != (stencil & mask))
 ---
---- * render.COMPARE_FUNC_ALWAYS (always passes)
+--- * graphics.COMPARE_FUNC_ALWAYS (always passes)
 ---@param func constant stencil test function, see the description for available values
 ---@param ref number reference value for the stencil test
 ---@param mask number mask that is ANDed with both the reference value and the stored stencil value when the test is done
@@ -376,25 +323,25 @@ function render.set_stencil_mask(mask) end
 ---Operator constants:
 ---
 ---
---- * render.STENCIL_OP_KEEP (keeps the current value)
+--- * graphics.STENCIL_OP_KEEP (keeps the current value)
 ---
---- * render.STENCIL_OP_ZERO (sets the stencil buffer value to 0)
+--- * graphics.STENCIL_OP_ZERO (sets the stencil buffer value to 0)
 ---
---- * render.STENCIL_OP_REPLACE (sets the stencil buffer value to ref, as specified by render.set_stencil_func <>)
+--- * graphics.STENCIL_OP_REPLACE (sets the stencil buffer value to ref, as specified by render.set_stencil_func <>)
 ---
---- * render.STENCIL_OP_INCR (increments the stencil buffer value and clamp to the maximum representable unsigned value)
+--- * graphics.STENCIL_OP_INCR (increments the stencil buffer value and clamp to the maximum representable unsigned value)
 ---
---- * render.STENCIL_OP_INCR_WRAP (increments the stencil buffer value and wrap to zero when incrementing the maximum representable unsigned value)
+--- * graphics.STENCIL_OP_INCR_WRAP (increments the stencil buffer value and wrap to zero when incrementing the maximum representable unsigned value)
 ---
---- * render.STENCIL_OP_DECR (decrements the current stencil buffer value and clamp to 0)
+--- * graphics.STENCIL_OP_DECR (decrements the current stencil buffer value and clamp to 0)
 ---
---- * render.STENCIL_OP_DECR_WRAP (decrements the current stencil buffer value and wrap to the maximum representable unsigned value when decrementing zero)
+--- * graphics.STENCIL_OP_DECR_WRAP (decrements the current stencil buffer value and wrap to the maximum representable unsigned value when decrementing zero)
 ---
---- * render.STENCIL_OP_INVERT (bitwise inverts the current stencil buffer value)
+--- * graphics.STENCIL_OP_INVERT (bitwise inverts the current stencil buffer value)
 ---
 ---dppass and dpfail specify the stencil buffer actions depending on whether subsequent
 ---depth buffer tests succeed (dppass) or fail (dpfail).
----The initial value for all operators is render.STENCIL_OP_KEEP.
+---The initial value for all operators is graphics.STENCIL_OP_KEEP.
 ---@param sfail constant action to take when the stencil test fails
 ---@param dpfail constant the stencil action when the stencil test passes
 ---@param dppass constant the stencil action when both the stencil test and the depth test pass, or when the stencil test passes and either there is no depth buffer or depth testing is not enabled
